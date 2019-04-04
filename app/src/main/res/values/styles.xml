@@ -1,0 +1,40 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:windowNoTitle">true</item>
+    </style>
+    <style name="NoTitleTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:windowNoTitle">true</item>
+    </style>
+    <style name="textsize30">
+        <item name="android:textSize">30px</item>
+    </style>
+    <style name="logintxt" parent="textsize30">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textColorHint">@color/white</item>
+        <item name="android:background">@null</item>
+    </style>
+    <style name="inputnum">
+        <item name="android:textSize">50dp</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+    <style name="btn_keyborad_style">
+        <item name= "android:layout_width">0dp</item>
+        <item name= "android:layout_height">188px</item>
+        <item name= "android:layout_margin">1dp</item>
+        <item name= "android:background">@color/white</item>
+        <item name= "android:gravity">center</item>
+        <item name= "android:textSize">60px</item>
+    </style>
+    <style name="textsize30dp">
+        <item name="android:textSize">30dp</item>
+    </style>
+    <style name="textsize20dp">
+        <item name="android:textSize">20dp</item>
+    </style>
+    <style name="managementstyle" parent="textsize30dp">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textAlignment">center</item>
+    </style>
+</resources>

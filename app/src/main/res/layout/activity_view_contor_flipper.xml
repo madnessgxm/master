@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ViewContorFlipperActivity">
+    <ImageSwitcher
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:id="@+id/imgSwitch">
+    </ImageSwitcher>
+    <TextSwitcher
+        app:layout_constraintTop_toBottomOf="@+id/imgSwitch"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:id="@+id/txtSwitch">
+    </TextSwitcher>
+    <TextClock
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:format24Hour="yyyy年MM月dd EE\naa HH:mm:ss"
+        android:format12Hour="yyyy年MM月dd EE\naa HH:mm:ss"
+        app:layout_constraintTop_toBottomOf="@+id/txtSwitch"
+        android:id="@+id/txtClock"/>
+    <android.support.v7.widget.SearchView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/txtClock"
+        android:id="@+id/searchview">
+    </android.support.v7.widget.SearchView>
+    <ListView
+        app:layout_constraintTop_toBottomOf="@+id/searchview"
+        android:layout_width="wrap_content"
+        android:id="@+id/lstview"
+        android:layout_height="wrap_content">
+    </ListView>
+</android.support.constraint.ConstraintLayout>

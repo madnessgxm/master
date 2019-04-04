@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">EMVL3KT</string>
+    <string name="username">ID</string>
+    <string name="usernametips">Please input account</string>
+    <string name="pwdtips">Please input the password</string>
+    <string name="keymanagement">Key Management</string>
+    <string name="exit">Exit</string>
+    <string name="appwidget_text">EXAMPLE</string>
+    <string name="add_widget">Add widget</string>
+    <string-array name="spinneritem">
+        <item name="first">first</item>
+        <item name="second">second</item>
+        <item name="thread">thread</item>
+        <item name="four">four</item>
+        <item name="fire">fire</item>
+    </string-array>
+</resources>

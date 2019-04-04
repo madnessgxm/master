@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.emvl3kt">
+
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.FLASHLIGHT" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:name="com.context.AppContext"
+        android:allowBackup="true"
+        android:hardwareAccelerated="false"
+        android:icon="@mipmap/ic_launcher"
+        android:largeHeap="true"
+        android:supportsRtl="true"
+        android:theme="@style/NoTitleTheme">
+        <activity android:name=".LoginActivity" />
+        <activity android:name=".BaseActivity" />
+        <activity android:name=".MainActivity" />
+        <activity android:name=".InputNumActivity" />
+        <activity android:name=".ManagerActivity" />
+        <activity android:name=".ScollActivity" />
+        <activity android:name=".selfViewGroupActivity" />
+        <activity android:name=".RemoteActivity" />
+
+        <receiver android:name=".NewAppWidget">
+            <intent-filter>
+                <action android:name="com.action.click" />
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/new_app_widget_info" />
+        </receiver>
+
+        <activity android:name=".LruCacheListViewActivity" />
+        <activity android:name=".ContorActivity" />
+        <activity android:name=".ListHeadActivity" />
+        <activity android:name=".flipperActivity" />
+        <activity android:name=".DrawerLayoutActivity" />
+        <activity android:name=".StackActivity" />
+        <activity android:name=".ViewSwitcherActivity" />
+        <activity android:name=".ViewContorFlipperActivity" />
+        <activity android:name=".RecyclerViewActivity" />
+        <activity android:name=".ViewPaperActivity" />
+        <activity android:name=".SwipeRefreshLayoutActivity" />
+        <activity android:name=".fragmentActivity"></activity>
+        <activity android:name="com.mvpfactory.view.LoginActivity" />
+        <activity android:name="com.mvvmfactory.DataBindingActivity">
+
+        </activity>
+        <activity android:name=".EventBusActivity">
+            <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

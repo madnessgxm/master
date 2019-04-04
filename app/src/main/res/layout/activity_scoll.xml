@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ScollActivity">
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent">
+            <LinearLayout
+                android:id="@+id/linelayoutcontexte"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <com.selfview.selfTextView
+                    android:id="@+id/selftextview2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="100dp"
+                    android:background="@color/colorAccent"
+                    app:txt="ni hao" />
+                <com.selfview.selfTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="100dp"
+                    android:background="@color/colorAccent"
+                    app:txt="ni hao" />
+                <com.selfview.selfTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="100dp"
+                    android:background="@color/colorAccent"
+                    app:txt="ni hao" />
+                <com.selfview.selfTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="100dp"
+                    android:background="@color/colorAccent"
+                    app:txt="ni hao" />
+                <com.selfview.selfTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="100dp"
+                    android:background="@color/colorAccent"
+                    app:txt="ni hao" />
+                <com.selfview.selfTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="100dp"
+                    android:background="@color/colorAccent"
+                    app:txt="ni hao" />
+                <com.selfview.selfTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="100dp"
+                    android:background="@color/colorAccent"
+                    app:txt="ni hao" />
+                <com.selfview.selfTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="100dp"
+                    android:background="@color/colorAccent"
+                    app:txt="ni hao" />
+                <com.selfview.selfTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="100dp"
+                    android:background="@color/colorAccent"
+                    app:txt="ni hao" />
+                <com.selfview.selfTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="100dp"
+                    android:background="@color/colorAccent"
+                    app:txt="ni hao" />
+                <com.selfview.selfTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="100dp"
+                    android:background="@color/colorAccent"
+                    app:txt="ni hao" />
+            </LinearLayout>
+    </ScrollView>
+
+
+    <HorizontalScrollView
+
+        android:id="@+id/horizontallScollView"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:id="@+id/linehear"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:orientation="horizontal">
+
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <com.view.myScollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="vertical">
+        <LinearLayout
+            android:id="@+id/linelayoutcontext"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <com.selfview.selfTextView
+                android:id="@+id/selftextview"
+                android:layout_width="wrap_content"
+                android:layout_height="100dp"
+                android:background="@color/colorAccent"
+                app:txt="ni hoa" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:text="123534" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:text="1245" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:text="1245" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:text="1245" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:text="1245" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:text="1245" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:text="1245" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:text="1245" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:text="1245" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:text="1245" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:text="1245" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:text="1245" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:text="1245" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:text="1245" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:text="1245" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:text="1245" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:text="1245" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:text="1245" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:text="1245" />
+        </LinearLayout>
+    </com.view.myScollView>
+
+</LinearLayout>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DrawerLayoutActivity">
+    <!--主view -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/tv_drawerlayout"
+            android:text="test Drawer"/>
+    </FrameLayout>
+    <!--侧滑view  layout_gravity 要添加-->
+    <LinearLayout
+        android:layout_width="200dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_first1"
+            android:textSize="30dp"
+            android:text="AAA"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_first2"
+            android:textSize="30dp"
+            android:text="AAA"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_first3"
+            android:textSize="30dp"
+            android:text="AAA"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_first4"
+            android:textSize="30dp"
+            android:text="AAA"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_first5"
+            android:textSize="30dp"
+            android:text="AAA"/>
+
+    </LinearLayout>
+</android.support.v4.widget.DrawerLayout>

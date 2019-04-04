@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<data>
+
+    <import type="android.databinding.ObservableList"/>
+    <variable
+        name="ivew"
+        type="com.mvvmfactory.DataBindingActivity"/>
+    <variable
+        name="user"
+        type="com.mvvmfactory.UserModel"/>
+    <variable
+        name="ObserableFiledUpserModel"
+        type="com.mvvmfactory.ObserableFieldUserName"/>
+    <variable
+        name="olist"
+        type="ObservableList&lt;String&gt;"/>
+    <variable
+        name="str"
+        type="int"/>
+    <import type="android.databinding.ObservableMap"/>
+    <variable
+        name="maptest"
+        type="ObservableMap&lt;String,String&gt;"/>
+    <variable
+        name="mapkey"
+        type="String"/>
+</data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{user.username}"
+            />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="OnClick"
+            android:id = "@+id/btnOnClick"
+            android:onClick="@{ivew::click}"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{ObserableFiledUpserModel.username}"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{olist[str],default=yy}"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{maptest[mapkey],default=yy}"/>
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@={user.username}"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id = "@+id/btnSend"
+            android:text="http Send"
+            android:onClick="@{ivew::click}"
+            />
+    </LinearLayout>
+</layout>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <com.view.CustomTitleBar
+        android:id="@+id/CtitleBar"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:visibility="visible"
+        app:layout_constraintTop_toTopOf="parent">
+    </com.view.CustomTitleBar>
+
+    <ImageView
+        android:id="@+id/imgpurchase"
+        android:layout_width="660px"
+        android:layout_height="220px"
+        android:layout_marginTop="16dp"
+        android:src="@drawable/purchase"
+        app:layout_constraintBottom_toTopOf="@+id/imgbance"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/CtitleBar"
+        app:layout_constraintVertical_bias="0.16000003" />
+
+    <ImageView
+        android:id="@+id/imgbance"
+        android:layout_width="660px"
+        android:layout_height="220px"
+        android:layout_marginTop="48dp"
+        android:src="@drawable/balance"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgpurchase" />
+
+    <ImageView
+        android:id="@+id/imgrefund"
+        android:layout_width="660px"
+        android:layout_height="220px"
+        android:layout_marginTop="48dp"
+        android:src="@drawable/refund"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgbance" />
+</android.support.constraint.ConstraintLayout>
