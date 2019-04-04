@@ -12,8 +12,10 @@ import io.reactivex.Observer
 import io.reactivex.Scheduler
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.Disposable
+import io.reactivex.functions.Function
 import io.reactivex.schedulers.Schedulers
 import kotlinx.android.synthetic.main.activity_event_bus.*
+import org.bouncycastle.util.Integers
 import org.greenrobot.eventbus.EventBus
 import org.greenrobot.eventbus.Subscribe
 import org.greenrobot.eventbus.ThreadMode
@@ -36,7 +38,7 @@ class EventBusActivity : BaseActivity() {
         })
 
         btnRxjava.setOnClickListener(object : View.OnClickListener {
-            override fun onClick(v: View?) {
+            override fun onClick(v: View?){
                 //To change body of created functions use File | Settings | File Templates.
 
                 //注册->初始化->订阅
@@ -45,32 +47,43 @@ class EventBusActivity : BaseActivity() {
                     it.onNext("second")
                     it.onNext("three")
                     it.onComplete()
+                }).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread()).
+                        subscribe(object : Observer<String> {
+                    var disposable: Disposable? = null
+                    override fun onComplete() {
+                        Log.d(TAG, "Success")
+                        //To change body of created functions use File | Settings | File Templates.
+                    }
+
+                    override fun onError(e: Throwable) {
+                        //To change body of created functions use File | Settings | File Templates.
+                        Log.d(TAG, "faile")
+                    }
+
+                    override fun onNext(t: String) {
+                        //To change body of created functions use File | Settings | File Templates.
+                        Log.d(TAG, t.toString())
+                    }
+
+                    override fun onSubscribe(d: Disposable) {
+                        //To change body of created functions use File | Settings | File Templates.
+                        disposable = d
+                    }
                 })
-                        .subscribeOn(Schedulers.io())
-                        .observeOn(AndroidSchedulers.mainThread()).subscribe(object : Observer<String> {
-                            var disposable: Disposable? = null
-                            override fun onComplete() {
-                                Log.d(TAG, "Success")
-                                //To change body of created functions use File | Settings | File Templates.
-                            }
 
-                            override fun onError(e: Throwable) {
-                                //To change body of created functions use File | Settings | File Templates.
-                                Log.d(TAG, "faile")
-                            }
 
-                            override fun onNext(t: String) {
-                                //To change body of created functions use File | Settings | File Templates.
-                                Log.d(TAG, t.toString())
-                            }
 
-                            override fun onSubscribe(d: Disposable) {
-                                //To change body of created functions use File | Settings | File Templates.
-                                disposable = d
-                            }
-                        })
             }
         })
+
+        //map 进行数据转换
+        RxJavaJustMap.setOnClickListener {
+            Observable.just("1").map(Function<String,Int>{
+                return@Function (it.toInt()+1)
+            }).subscribe{
+                Log.d(TAG,it.toString())
+            }
+        }
     }
 
     @Subscribe(threadMode = ThreadMode.BACKGROUND)
