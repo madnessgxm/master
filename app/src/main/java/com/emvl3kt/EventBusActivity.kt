@@ -6,12 +6,17 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.Toast
+import com.RetrofitRxJavaOkHtto.IWeather
+import com.RetrofitRxJavaOkHtto.NetManager
+import com.RetrofitRxJavaOkHtto.Weathinfo
+import com.httpProxy.weatherinfo
 import io.reactivex.Observable
 import io.reactivex.ObservableOnSubscribe
 import io.reactivex.Observer
 import io.reactivex.Scheduler
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.Disposable
+import io.reactivex.functions.Consumer
 import io.reactivex.functions.Function
 import io.reactivex.schedulers.Schedulers
 import kotlinx.android.synthetic.main.activity_event_bus.*
@@ -83,6 +88,19 @@ class EventBusActivity : BaseActivity() {
             }).subscribe{
                 Log.d(TAG,it.toString())
             }
+        }
+
+        RetrofitRxjavaOkhttp.setOnClickListener {
+            var iweather =  NetManager.createClass(IWeather::class.java)
+            var it = iweather.msgHomeInfo as Observable<Weathinfo>
+            it.subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread())
+                    .subscribe(Consumer<Weathinfo>{
+                Log.d(TAG,"success")
+               // Log.d(TAG,)
+            }, Consumer {
+
+            })
+
         }
     }
 

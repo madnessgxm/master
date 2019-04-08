@@ -21,7 +21,7 @@ class OkHttpProxy :IHttpProcessor {
                 //To change body of created functions use File | Settings | File Templates.
                 if(response!!.isSuccessful)
                 {
-                    callBack.success(response.body().string())
+                    callBack.success(response.body()!!.string())
                 }
             }
 
@@ -44,7 +44,7 @@ class OkHttpProxy :IHttpProcessor {
                 //To change body of created functions use File | Settings | File Templates.
                 if(response!!.isSuccessful)
                 {
-                    callBack.success(response.body().string())
+                    callBack.success(response.body()!!.string())
                 }
             }
 
