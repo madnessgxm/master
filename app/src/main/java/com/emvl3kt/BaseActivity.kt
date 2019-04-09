@@ -5,7 +5,7 @@ import android.os.Bundle
 import android.view.View
 import myself.annotationprocessor.testannotation
 
-@testannotation(name="BaseActivity")
+
 open class BaseActivity : Activity(), View.OnClickListener {
 
 

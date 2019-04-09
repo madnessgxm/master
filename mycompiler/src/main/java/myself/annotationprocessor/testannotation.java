@@ -23,7 +23,7 @@ RUNTIME, 在源码,字节码,运行时均可用
 其中, @Retention是定义保留策略, 直接决定了我们用何种方式解析. SOUCE级别的注解是用来标记的, 比如Override, SuppressWarnings. 我们真正使用的类型是CLASS(编译时)和RUNTIME(运行时)
 */
 @Retention(RetentionPolicy.CLASS)
-@Target(ElementType.TYPE)
+@Target({ElementType.TYPE})
 public @interface testannotation {
     String name() default "";
 }

@@ -1,8 +1,10 @@
 package com.emvl3kt
 
+import android.content.ComponentName
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.support.v4.view.KeyEventDispatcher
 import android.util.Log
 import android.view.View
 import android.widget.Toast
@@ -10,6 +12,7 @@ import com.RetrofitRxJavaOkHtto.IWeather
 import com.RetrofitRxJavaOkHtto.NetManager
 import com.RetrofitRxJavaOkHtto.Weathinfo
 import com.httpProxy.weatherinfo
+import com.until.TrackManager
 import io.reactivex.Observable
 import io.reactivex.ObservableOnSubscribe
 import io.reactivex.Observer
@@ -20,6 +23,7 @@ import io.reactivex.functions.Consumer
 import io.reactivex.functions.Function
 import io.reactivex.schedulers.Schedulers
 import kotlinx.android.synthetic.main.activity_event_bus.*
+import myself.annotationprocessor.IData
 import org.bouncycastle.util.Integers
 import org.greenrobot.eventbus.EventBus
 import org.greenrobot.eventbus.Subscribe
@@ -102,6 +106,37 @@ class EventBusActivity : BaseActivity() {
             })
 
         }
+
+        RxBus_regedit.setOnClickListener{
+            //注册RxBus
+            com.rxJava.RxBus.getInstance().toObservable().subscribe(Consumer {
+               var weatheri =  it as weatherinfo
+                weatheri.SD;
+            },Consumer<Throwable>(){
+
+            })
+        }
+
+        RxBus_post.setOnClickListener {
+            com.rxJava.RxBus.getInstance().post(weatherinfo())
+        }
+
+        annoationload.setOnClickListener {
+            getchildclass()
+        }
+
+        annoationintent.setOnClickListener {
+            var str:String = TrackManager.getInstence().hashMap!!["LoginActivity"]!!.toString()
+            var intent = Intent()
+            var componentName = ComponentName(this@EventBusActivity,str)
+            intent.component = componentName
+            startActivity(intent)
+        }
+    }
+
+    fun getchildclass()
+    {
+        TrackManager.getInstence().loadinfo()
     }
 
     @Subscribe(threadMode = ThreadMode.BACKGROUND)

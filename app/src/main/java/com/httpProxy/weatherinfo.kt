@@ -1,6 +1,7 @@
 package com.httpProxy
 
 class weatherinfo {
+    constructor()
     var city: String = ""
         get() = field
         set(value) {

@@ -29,4 +29,28 @@
         android:text="RetrofitRxjavaOkhttp"
         app:layout_constraintTop_toBottomOf="@+id/RxJavaJustMap"
         android:id="@+id/RetrofitRxjavaOkhttp"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="RxBus_regedit"
+        app:layout_constraintTop_toBottomOf="@+id/RetrofitRxjavaOkhttp"
+        android:id="@+id/RxBus_regedit"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="RxBus_post"
+        app:layout_constraintTop_toBottomOf="@+id/RxBus_regedit"
+        android:id="@+id/RxBus_post"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="annoationload"
+        app:layout_constraintTop_toBottomOf="@+id/RxBus_post"
+        android:id="@+id/annoationload"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="annoationintent"
+        app:layout_constraintTop_toBottomOf="@+id/annoationload"
+        android:id="@+id/annoationintent"/>
 </android.support.constraint.ConstraintLayout>

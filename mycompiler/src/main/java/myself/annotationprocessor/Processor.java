@@ -11,6 +11,7 @@ import java.util.Map;
 import java.util.Set;
 
 import javax.annotation.processing.AbstractProcessor;
+import javax.annotation.processing.Filer;
 import javax.annotation.processing.Messager;
 import javax.annotation.processing.RoundEnvironment;
 import javax.annotation.processing.SupportedAnnotationTypes;
@@ -48,7 +49,7 @@ public class Processor extends AbstractProcessor {
                 // 获取名称
                 String name = "".equals(annotation.name()) ? e.getSimpleName().toString() : annotation.name();
                 // 保存映射信息
-                trackMap.put(e.getSimpleName().toString(), name);
+                trackMap.put(e.getSimpleName().toString(), e.toString());
                 messager.printMessage(Diagnostic.Kind.NOTE, "映射关系：" + e.getSimpleName().toString() + "-" + name);
             }
         }
@@ -61,6 +62,8 @@ public class Processor extends AbstractProcessor {
 
             // 创建Java文件
             JavaFileObject f = processingEnv.getFiler().createSourceFile(genarateClassName);
+            messager.printMessage(Diagnostic.Kind.NOTE, "Printing: delete");
+            f.delete();
             // 在控制台输出文件路径
             messager.printMessage(Diagnostic.Kind.NOTE, "Printing: " + f.toUri());
             Writer w = f.openWriter();
@@ -68,7 +71,7 @@ public class Processor extends AbstractProcessor {
                 PrintWriter pw = new PrintWriter(w);
                 pw.println("package " + genaratePackageName + ";\n");
                 pw.println("import java.util.Map;");
-                pw.println("import com.xud.annotationprocessor.IData;\n");
+                pw.println("import myself.annotationprocessor.IData;\n");
                 pw.println("/**");
                 pw.println("* this file is auto-create by compiler,please don`t edit it");
                 pw.println("* 页面路径映射关系表");
@@ -90,7 +93,7 @@ public class Processor extends AbstractProcessor {
                 w.close();
             }
         } catch (IOException x) {
-            processingEnv.getMessager().printMessage(Diagnostic.Kind.ERROR, x.toString());
+            processingEnv.getMessager().printMessage(Diagnostic.Kind.NOTE, x.toString());
         }
         return false;
     }
