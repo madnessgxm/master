@@ -3,7 +3,6 @@ package com.emvl3kt
 import android.app.Activity
 import android.os.Bundle
 import android.view.View
-import myself.annotationprocessor.testannotation
 
 
 open class BaseActivity : Activity(), View.OnClickListener {

@@ -13,6 +13,7 @@ import com.RetrofitRxJavaOkHtto.NetManager
 import com.RetrofitRxJavaOkHtto.Weathinfo
 import com.httpProxy.weatherinfo
 import com.until.TrackManager
+import com.xiaomi.StackMain
 import io.reactivex.Observable
 import io.reactivex.ObservableOnSubscribe
 import io.reactivex.Observer
@@ -23,7 +24,6 @@ import io.reactivex.functions.Consumer
 import io.reactivex.functions.Function
 import io.reactivex.schedulers.Schedulers
 import kotlinx.android.synthetic.main.activity_event_bus.*
-import myself.annotationprocessor.IData
 import org.bouncycastle.util.Integers
 import org.greenrobot.eventbus.EventBus
 import org.greenrobot.eventbus.Subscribe
@@ -131,6 +131,10 @@ class EventBusActivity : BaseActivity() {
             var componentName = ComponentName(this@EventBusActivity,str)
             intent.component = componentName
             startActivity(intent)
+        }
+
+        btnthread.setOnClickListener {
+            StackMain.main(null)
         }
     }
 

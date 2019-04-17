@@ -15,12 +15,16 @@ import wangpos.sdk4.libbasebinder.Core
 import wangpos.sdk4.libbasebinder.Printer
 import wangpos.sdk4.libkeymanagerbinder.Key
 import kotlin.concurrent.thread
+import android.database.sqlite.SQLiteDatabase
+
+
 
 class AppContext : Application {
     var context: Context? = null
 
     constructor(){
     }
+
 
     override fun onCreate() {
         super.onCreate()
@@ -51,8 +55,24 @@ class AppContext : Application {
                 mCore!!.setDateTime(datestr.toByteArray(Charsets.UTF_8))
             }*/
         }
+
     }
 
+    /**
+     * 初始化GreenDao,直接在Application中进行初始化操作
+     */
+   /* private fun initGreenDao() {
+        val helper = DaoMaster.DevOpenHelper(this, "aserbao.db")
+        val db = helper.getWritableDatabase()
+        val daoMaster = DaoMaster(db)
+        daoSession = daoMaster.newSession()
+    }
+
+    private var daoSession: DaoSession? = null
+    fun getDaoSession(): DaoSession? {
+        return daoSession
+    }
+*/
     companion object {
 
         var emvCore: EmvCore? = null

@@ -14,10 +14,8 @@ import com.presenter.PersenterControl
 import com.presenter.PersenterFactory
 import com.view.DlgToast
 import kotlinx.android.synthetic.main.activity_login.*
-import myself.annotationprocessor.testannotation
 import java.util.*
 
-@testannotation(name="")
 class LoginActivity : BaseActivity() {
 
     val handler =object :Handler()
