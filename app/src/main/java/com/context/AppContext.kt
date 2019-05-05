@@ -16,7 +16,8 @@ import wangpos.sdk4.libbasebinder.Printer
 import wangpos.sdk4.libkeymanagerbinder.Key
 import kotlin.concurrent.thread
 import android.database.sqlite.SQLiteDatabase
-
+import com.greendao.DaoMaster
+import com.greendao.DaoSession
 
 
 class AppContext : Application {
@@ -38,6 +39,13 @@ class AppContext : Application {
         }catch (ex:Exception)
         {
             ex.printStackTrace()
+        }
+        try
+        {
+            initGreenDao();
+        }catch (ex:Exception)
+        {
+
         }
         HttpHelper.init(OkHttpProxy())
         thread(start = true)
@@ -61,20 +69,19 @@ class AppContext : Application {
     /**
      * 初始化GreenDao,直接在Application中进行初始化操作
      */
-   /* private fun initGreenDao() {
+    private fun initGreenDao() {
         val helper = DaoMaster.DevOpenHelper(this, "aserbao.db")
         val db = helper.getWritableDatabase()
         val daoMaster = DaoMaster(db)
         daoSession = daoMaster.newSession()
     }
 
-    private var daoSession: DaoSession? = null
     fun getDaoSession(): DaoSession? {
         return daoSession
     }
-*/
-    companion object {
 
+    companion object {
+        var daoSession: DaoSession? = null
         var emvCore: EmvCore? = null
         var mCore: Core? = null
         var mKey: Key? = null

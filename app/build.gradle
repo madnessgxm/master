@@ -81,4 +81,7 @@ dependencies {
     implementation project(':mycompiler')
 
     implementation 'org.greenrobot:greendao:3.2.2'//greendao
+
+    testImplementation 'junit:junit:4.12'
+
 }

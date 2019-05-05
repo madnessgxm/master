@@ -45,14 +45,15 @@
         <activity android:name=".RecyclerViewActivity" />
         <activity android:name=".ViewPaperActivity" />
         <activity android:name=".SwipeRefreshLayoutActivity" />
-        <activity android:name=".fragmentActivity"></activity>
+        <activity android:name=".fragmentActivity" />
         <activity android:name="com.mvpfactory.view.LoginActivity" />
-        <activity android:name="com.mvvmfactory.DataBindingActivity">
-
-        </activity>
+        <activity android:name="com.mvvmfactory.DataBindingActivity"></activity>
         <activity android:name=".EventBusActivity">
+        </activity>
+        <activity android:name=".GreenDaoActivity">
             <intent-filter>
             <action android:name="android.intent.action.MAIN" />
+
             <category android:name="android.intent.category.LAUNCHER" />
         </intent-filter>
         </activity>
