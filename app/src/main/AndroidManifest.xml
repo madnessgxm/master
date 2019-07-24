@@ -47,15 +47,16 @@
         <activity android:name=".SwipeRefreshLayoutActivity" />
         <activity android:name=".fragmentActivity" />
         <activity android:name="com.mvpfactory.view.LoginActivity" />
-        <activity android:name="com.mvvmfactory.DataBindingActivity"></activity>
-        <activity android:name=".EventBusActivity">
+        <activity android:name="com.mvvmfactory.DataBindingActivity" />
+        <activity android:name=".EventBusActivity" />
+        <activity android:name=".GreenDaoActivity"></activity>
+        <activity android:name=".LineHeightActivity">
         </activity>
-        <activity android:name=".GreenDaoActivity">
+        <activity android:name=".languageActivity">
             <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
-
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
     </application>
 

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <Preference
+        android:title="@string/phone_language_summary"
+        android:summary="@string/auto_replace"
+        android:key="ETHERNET_CONFIG_STATUS"
+        android:persistent="false" />
+    <Preference
+        android:title="@string/auto_replace_summary"
+        android:summary="0.0.0.0"
+        android:key="ETHERNET_CONFIG_MAC"
+        android:persistent="false" />
+    <Preference
+        android:title="@string/auto_punctuate"
+        android:summary="0.0.0.0"
+        android:key="ETHERNET_CONFIG_ADDRESS"
+        android:persistent="false" />
+    <Preference
+        android:title="@string/show_password"
+        android:summary="@string/pointer_settings_category"
+        android:key="ETHERNET_CONFIG"
+        android:persistent="false" />
+    <EditTextPreference android:key="languaerphoe" />
+</PreferenceScreen>

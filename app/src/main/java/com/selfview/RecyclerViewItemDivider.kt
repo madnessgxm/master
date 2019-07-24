@@ -16,7 +16,7 @@ class RecyclerViewItemDivider : RecyclerView.ItemDecoration {
         context = ccontext
         drawable = context!!.resources.getDrawable(cdrawable)
     }
-
+/*
     override fun onDrawOver(c: Canvas?, parent: RecyclerView?, state: RecyclerView.State?) {
         var left = parent!!.paddingLeft
         var right = parent!!.width - parent.paddingLeft
@@ -33,5 +33,5 @@ class RecyclerViewItemDivider : RecyclerView.ItemDecoration {
     override fun getItemOffsets(outRect: Rect?, view: View?, parent: RecyclerView?, state: RecyclerView.State?) {
         //super.getItemOffsets(outRect, view, parent, state)
         outRect!!.set(0, 0, 0, drawable!!.intrinsicWidth)
-    }
+    }*/
 }
