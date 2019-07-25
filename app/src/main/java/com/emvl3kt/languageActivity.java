@@ -13,9 +13,18 @@ import android.widget.Button;
 
 import com.toolutils.view.AppMsg;
 import com.toolutils.view.ToastUtil;
+import com.xml.XmlUtil;
 
+import org.w3c.dom.Element;
+import org.w3c.dom.NodeList;
+
+import java.io.ByteArrayInputStream;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
+
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
 
 public class languageActivity extends BaseActivity {
 
@@ -39,18 +48,55 @@ public class languageActivity extends BaseActivity {
         bt3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                List<String> list = new ArrayList<>();
+              /*  List<String> list = new ArrayList<>();
                 list.add("你好");
                 list.add("你好,1");
                 list.add("你好,2");
                 list.add("你好,3");
                 list.add("你好,4");
-                ToastUtil.showInfo(languageActivity.this,list);
-               /* bt3.setTypeface(bt3.getTypeface());
-                bt3.setText(getResources().getString(R.string.keyboard_layout_picker_title));
-               Typeface typeface =  bt3.getTypeface();
+                String str ="你好你好1你好2你好3";
+                ToastUtil.showInfo(languageActivity.this,str);*/
+              String tmpstr = "<root>" +"<tab>" +
+                      "        <RY_Bh>01</RY_Bh>" +
+                      "        <RY_Name>周扬升</RY_Name>" +
+                      "        <BM>蜘蛛人</BM>" +
+                      "        <icid>CA000001</icid>" +
+                      "      </tab>" +
+                      "      <tab>" +
+                      "        <RY_Bh>02</RY_Bh>" +
+                      "        <RY_Name>陈言翰</RY_Name>" +
+                      "        <BM>蜘蛛人</BM>" +
+                      "        <icid>CA000002</icid>" +
+                      "      </tab>" +
+                      "      <tab>" +
+                      "        <RY_Bh>03</RY_Bh>" +
+                      "        <RY_Name>廖秋铭</RY_Name>" +
+                      "        <BM>蜘蛛人</BM>" +
+                      "        <icid>CA000003</icid>" +
+                      "      </tab>" +
+                      "      <tab>" +
+                      "        <RY_Bh>04</RY_Bh>" +
+                      "        <RY_Name>许骥</RY_Name>" +
+                      "        <BM>蜘蛛人</BM>" +
+                      "        <icid>CA000004</icid>" +
+                      "      </tab>" +
+                      "      <tab>" +
+                      "        <RY_Bh>05</RY_Bh>" +
+                      "        <RY_Name>朱红源</RY_Name>" +
+                      "        <BM>蜘蛛人</BM>" +
+                      "        <icid>CA000005</icid>" +
+                      "      </tab>"+
+                      "</root>";
 
-               Log.d(TAG,typeface.toString());*/
+              try {
+                  XmlUtil<CRY> xmlUtil = new XmlUtil<>();
+                  List<CRY> cries =  xmlUtil.getLst(CRY.class,tmpstr);
+                  Log.d(TAG,cries.size()+"") ;
+              }catch (Exception ex)
+              {
+                  ex.printStackTrace();
+              }
+
             }
         });
     }
