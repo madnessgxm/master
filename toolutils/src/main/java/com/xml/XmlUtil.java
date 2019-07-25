@@ -24,7 +24,7 @@ import javax.xml.parsers.DocumentBuilderFactory;
  * Date: 2019-07-25
  * Time: 14:43
  */
-public class XmlUtil<T> {
+public class XmlUtil<T extends XmlObj> {
 
     /**
      * 事例类：
@@ -120,7 +120,7 @@ public class XmlUtil<T> {
 
     /*
      * 利用泛型解析XML 列表，并返回泛型列表*/
-    public List<T> getLst(Class clazz, NodeList nodelst) {
+    public <T extends XmlObj> List<T> getLst(Class clazz, NodeList nodelst) {
         List<T> list = new ArrayList<>();
         try {
             for (int j = 0; j < nodelst.getLength(); j++) {
@@ -130,10 +130,12 @@ public class XmlUtil<T> {
                 for (int i = 0; i < nodeList.getLength(); i++) {
                     Node xe1 = nodeList.item(i);
                     Field field = clazz.getDeclaredField(xe1.getNodeName());
-                    Method method = clazz.getMethod("set" + xe1.getNodeName().substring(0, 1).toUpperCase() + xe1.getNodeName().substring(1), field.getType());
-                    method.setAccessible(true);
-                    if (xe1.getFirstChild() != null) {
-                        method.invoke(o, xe1.getFirstChild().getNodeValue());
+                    if(field!=null) {
+                        Method method = clazz.getMethod("set" + xe1.getNodeName().substring(0, 1).toUpperCase() + xe1.getNodeName().substring(1), field.getType());
+                        method.setAccessible(true);
+                        if (xe1.getFirstChild() != null) {
+                            method.invoke(o, xe1.getFirstChild().getNodeValue());
+                        }
                     }
                 }
                 list.add(o);
@@ -147,7 +149,7 @@ public class XmlUtil<T> {
 
     /*
      * 利用泛型解析XML 列表，并返回泛型列表*/
-    public List<T> getLst(Class clazz, String xmlstr) {
+    public <T extends XmlObj> List<T> getLst(Class clazz, String xmlstr) {
         try {
             DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
             DocumentBuilder builder = null;

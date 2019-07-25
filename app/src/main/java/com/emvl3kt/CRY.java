@@ -1,11 +1,13 @@
 package com.emvl3kt;
 
+import com.xml.XmlObj;
+
 /**
  * User: guoxiaomeng
  * Date: 2019-07-23
  * Time: 20:54
  */
-public class CRY
+public class CRY extends XmlObj
 {
     public CRY(){};
     private String RY_Bh;//

@@ -13,6 +13,7 @@ import android.widget.Button;
 
 import com.toolutils.view.AppMsg;
 import com.toolutils.view.ToastUtil;
+import com.xml.XmlObj;
 import com.xml.XmlUtil;
 
 import org.w3c.dom.Element;
@@ -89,7 +90,7 @@ public class languageActivity extends BaseActivity {
                       "</root>";
 
               try {
-                  XmlUtil<CRY> xmlUtil = new XmlUtil<>();
+                  XmlUtil<XmlObj> xmlUtil = new XmlUtil<>();
                   List<CRY> cries =  xmlUtil.getLst(CRY.class,tmpstr);
                   Log.d(TAG,cries.size()+"") ;
               }catch (Exception ex)

@@ -2,14 +2,11 @@ apply plugin: 'com.android.library'
 
 android {
     compileSdkVersion 28
-
-
     defaultConfig {
         minSdkVersion 19
         targetSdkVersion 28
         versionCode 1
         versionName "1.0"
-
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
     }
@@ -37,7 +34,7 @@ dependencies {
 def SDK_BASENAME = "ToolUitls";
 def SDK_VERSION = "V1.0";
 def sdkDestinationPath = "build";
-def zipFile = file('build/libs/classes.jar')
+def zipFile = file('build/intermediates/intermediate-jars/debug/classes.jar')
 
 task deleteBuild(type: Delete) {
     delete sdkDestinationPath + SDK_BASENAME + SDK_VERSION + ".jar"
