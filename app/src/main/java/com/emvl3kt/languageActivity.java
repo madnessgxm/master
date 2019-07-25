@@ -11,6 +11,12 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
+import com.toolutils.view.AppMsg;
+import com.toolutils.view.ToastUtil;
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class languageActivity extends BaseActivity {
 
     private static final String TAG =languageActivity.class.getSimpleName() ;
@@ -33,11 +39,18 @@ public class languageActivity extends BaseActivity {
         bt3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                bt3.setTypeface(bt3.getTypeface());
+                List<String> list = new ArrayList<>();
+                list.add("你好");
+                list.add("你好,1");
+                list.add("你好,2");
+                list.add("你好,3");
+                list.add("你好,4");
+                ToastUtil.showInfo(languageActivity.this,list);
+               /* bt3.setTypeface(bt3.getTypeface());
                 bt3.setText(getResources().getString(R.string.keyboard_layout_picker_title));
                Typeface typeface =  bt3.getTypeface();
 
-               Log.d(TAG,typeface.toString());
+               Log.d(TAG,typeface.toString());*/
             }
         });
     }

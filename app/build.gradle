@@ -95,6 +95,5 @@ dependencies {
     implementation 'org.greenrobot:greendao:3.2.2'
     //greendao
     testImplementation 'junit:junit:4.12'
-    implementation files('libs/cw-deviceapi.jar')
-    implementation files('libs/IGLBarDecoder.jar')
+    implementation project(path: ':toolutils')
 }
