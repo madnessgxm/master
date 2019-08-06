@@ -3,7 +3,7 @@ apply plugin: 'com.android.library'
 android {
     compileSdkVersion 28
     defaultConfig {
-        minSdkVersion 19
+        minSdkVersion 14
         targetSdkVersion 28
         versionCode 1
         versionName "1.0"
@@ -42,9 +42,15 @@ task deleteBuild(type: Delete) {
 
 task makeJar(type: Jar) {
     from zipTree(zipFile)
-    from fileTree(dir: 'src/main',includes: ['aidl/**'])
+    from fileTree(dir: 'src/main',includes: ['aidl/**','libs/**'])
+   /* //第三方库的jar包存放位置
+    from(project.zipTree("libs/asnrt.jar"))
+    from(project.zipTree("libs/bcprov-jdk15on-158.jar"))
+    from(project.zipTree("libs/okio-2.2.1.jar"))
+    from(project.zipTree("libs/kotlin-stdlib-1.3.11.jar"))*/
     baseName = SDK_BASENAME + SDK_VERSION
     destinationDir = file(sdkDestinationPath)
+
 }
 
 makeJar.dependsOn(deleteBuild, build)

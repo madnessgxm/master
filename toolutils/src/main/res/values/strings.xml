@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">ToolUtils</string>
+    <string name="tips">数据正在更新，请稍等...</string>
 </resources>

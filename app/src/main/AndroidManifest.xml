@@ -14,6 +14,12 @@
         android:largeHeap="true"
         android:supportsRtl="true"
         android:theme="@style/NoTitleTheme">
+        <activity android:name="com.usb.USBActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity android:name=".LoginActivity" />
         <activity android:name=".BaseActivity" />
         <activity android:name=".MainActivity" />
@@ -49,14 +55,10 @@
         <activity android:name="com.mvpfactory.view.LoginActivity" />
         <activity android:name="com.mvvmfactory.DataBindingActivity" />
         <activity android:name=".EventBusActivity" />
-        <activity android:name=".GreenDaoActivity"></activity>
-        <activity android:name=".LineHeightActivity">
-        </activity>
+        <activity android:name=".GreenDaoActivity" />
+        <activity android:name=".LineHeightActivity"></activity>
         <activity android:name=".languageActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+
         </activity>
     </application>
 
